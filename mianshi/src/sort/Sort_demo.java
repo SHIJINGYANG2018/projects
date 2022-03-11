@@ -25,11 +25,11 @@ public class Sort_demo {
 
 
     /**
-     *  依次判断相邻的元素    判断  交换位置
-     *  原理： 跟冒泡原理一样，泡越大，他越在后面。假设此时在最下面生成一个最大的泡泡，
-     *  但是，之前生成的其他泡泡大小不变，也静止不动。
-     *  那这个大泡泡，会不停的往上窜，最终达到顶峰。
-     *  这就是 相邻的泡泡比较，只有跟最大的泡泡一个一个的交换位置，达到顶峰的。
+     * 依次判断相邻的元素    判断  交换位置
+     * 原理： 跟冒泡原理一样，泡越大，他越在后面。假设此时在最下面生成一个最大的泡泡，
+     * 但是，之前生成的其他泡泡大小不变，也静止不动。
+     * 那这个大泡泡，会不停的往上窜，最终达到顶峰。
+     * 这就是 相邻的泡泡比较，只有跟最大的泡泡一个一个的交换位置，达到顶峰的。
      */
     //冒泡排序   小——>大
     private static void BubbleSort(int[] ints1) {
@@ -94,9 +94,9 @@ public class Sort_demo {
     /**
      * 直接插入排序
      * 原理：默认某个元素 X 之前已经是有序数组，所以将 X 之前的 元素遍历比较，
-     *  如果X比前边的元素小，交换位置，如果X(以交换位置了)还小，再交换位置，再比较
-     *  这里的实现不是直接交换，我们是将X之前的数， 先判断，哪个是不符合条件的，我们将{"不符合",x}位置，
-     *  的元素统一向后移以为，将X 插入"不符合"位置后面
+     * 如果X比前边的元素小，交换位置，如果X(以交换位置了)还小，再交换位置，再比较
+     * 这里的实现不是直接交换，我们是将X之前的数， 先判断，哪个是不符合条件的，我们将{"不符合",x}位置，
+     * 的元素统一向后移以为，将X 插入"不符合"位置后面
      */
     public static void insterSort(int[] ints) {
         //从第二个开始比较
@@ -123,11 +123,11 @@ public class Sort_demo {
         //从第二个开始比较
         for (int i = 1; i < ints.length; i++) {
             // 如果当前数字与前面数字比较
-            int j=i;
-            while (j>0&&ints[j] < ints[j - 1]) {
-                int a=ints[j-1];
-                ints[j-1]=ints[j];
-                ints[j]=a;
+            int j = i;
+            while (j > 0 && ints[j] < ints[j - 1]) {
+                int a = ints[j - 1];
+                ints[j - 1] = ints[j];
+                ints[j] = a;
                 j--;
             }
         }
@@ -188,10 +188,10 @@ public class Sort_demo {
     /**
      * 归并排序
      * 先拆分，在归并
-     *  首先将一个数组，拆分成一个一个的数组，下面的范围 其实就是，锁定数组元素
-     *  sjy=[5,8,2,9,1]
-     *  分成一个的就是  (sjy,0,<1)=5, (sjy,1,<2)=8
-     *   再将其合并
+     * 首先将一个数组，拆分成一个一个的数组，下面的范围 其实就是，锁定数组元素
+     * sjy=[5,8,2,9,1]
+     * 分成一个的就是  (sjy,0,<1)=5, (sjy,1,<2)=8
+     * 再将其合并
      */
     public static void mergeSort(int[] ints, int low, int hight) {
         int middle = (hight + low) / 2;
@@ -202,7 +202,7 @@ public class Sort_demo {
             mergeSort(ints, middle + 1, hight);
             // 归并
             System.out.println();
-            System.out.println(low+"---"+middle+"---"+hight);
+            System.out.println(low + "---" + middle + "---" + hight);
             merge(ints, low, middle, hight);
         }
     }
@@ -270,16 +270,16 @@ public class Sort_demo {
                 //记录数++
                 counts[a]++;
             }
-            int index=0;
+            int index = 0;
             // 取出数组
             for (int j = 0; j < counts.length; j++) {
                 // 取出二维数组的数据 放入原数组中
                 if (counts[j] != 0) {
                     for (int k = 0; k < counts[j]; k++) {
-                        ints[index]=temp[j][k];
+                        ints[index] = temp[j][k];
                         index++;
                     }
-                    counts[j]=0;
+                    counts[j] = 0;
                 }
             }
 
@@ -290,11 +290,11 @@ public class Sort_demo {
      * 基数排序 队列实现
      */
     public static void radixQueueRort(int[] ints) {
-        ArrayDeque[] integers=new ArrayDeque[10];
+        ArrayDeque[] integers = new ArrayDeque[10];
         for (int i = 0; i < integers.length; i++) {
-            integers[i]=new ArrayDeque<Integer>(ints.length);
+            integers[i] = new ArrayDeque<Integer>(ints.length);
         }
-       // ArrayQueue<Integer> integers = new ArrayQueue<>(ints.length);
+        // ArrayQueue<Integer> integers = new ArrayQueue<>(ints.length);
         int asInt = Arrays.stream(ints).max().getAsInt();
         int length = (asInt + "").length();
 
@@ -306,7 +306,7 @@ public class Sort_demo {
                 // 把当前遍历的数据放入临时的数据
                 integers[a].addLast(ints[j]);
             }
-            int index=0;
+            int index = 0;
             // 取出数组
             for (ArrayDeque integer : integers) {
                 // 取出队列中的数据放入原数组中
@@ -319,6 +319,7 @@ public class Sort_demo {
 
         }
     }
+
     public static void main(String[] args) {
         //冒泡排序
         //BubbleSort(ints);

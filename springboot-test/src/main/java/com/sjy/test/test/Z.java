@@ -5,11 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.ServletContextAware;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.ServletContext;
 
 @Component
-public class Z implements ApplicationContextAware {
+public class Z implements ApplicationContextAware , ServletContextAware {
 	@Autowired
 	X x;//注入X
 
@@ -28,5 +30,10 @@ public class Z implements ApplicationContextAware {
 	@Override
 	public void setApplicationContext(ApplicationContext ac) {
 		System.out.println("call aware callback");
+	}
+
+	@Override
+	public void setServletContext(ServletContext servletContext) {
+
 	}
 }
