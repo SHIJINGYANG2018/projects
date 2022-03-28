@@ -8,6 +8,7 @@ public class X {
 
 	@Autowired
 	Y y;
+	int a;
 
 	public X(){
 		System.out.println("X create");

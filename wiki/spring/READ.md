@@ -13,5 +13,12 @@ Spring 帮我们起到了一个SpringIOC的作用，用来承载我们整体的b
 之后就可以通过getBean获取bean对象。
 
 
+
+
+
+
+getBean --> doGetBean --> createBean --> doCreateBean --> createBeanInstance --> populateBean
+
+
 Bean生命周期， bean实例化完成，之后初始化，首先操作的是对bean的属性进行赋值，->>如果bean实现了Aware方法，会先执行回调回调方法，如果没有实现，就会跳过这个过程，
 之后，执行before ,init方法,after，整个bean对象完整。如果关闭spring容器，会销毁bean方法，通过注解执行，通过配置文件destory-method
