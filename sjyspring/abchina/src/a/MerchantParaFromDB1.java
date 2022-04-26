@@ -55,10 +55,10 @@ public class MerchantParaFromDB1 extends MerchantParaFactory {
 
             //##网上支付平台系统配置段 - 生产环境 - 更改证书存放路径，使其和本地存放路径相匹配（绝对路径）
             //#网上支付平台证书
-            para.setTrustPayCertFileName("D:/mocentre/abc/TrustPay.cer");
+            para.setTrustPayCertFileName("");
 
             //#农行根证书文件
-            para.setTrustStoreFileName("D:/mocentre/abc/abc.truststore");
+            para.setTrustStoreFileName("");
 
             //#农行根证书文件密码
             para.setTrustStorePassword("changeit");
