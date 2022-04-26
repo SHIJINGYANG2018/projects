@@ -72,7 +72,7 @@ public class MerchantParaFromDB1 extends MerchantParaFactory {
 
             //设置商户证书。如果是多商户则在iMerchantCertNameList放置多条记录。注意：商户证书名称顺序要与商户编号顺序一致
             ArrayList<byte[]> iMerchantCertList = new ArrayList<byte[]>();
-            iMerchantCertList.add(util.readFile("D:/mocentre/abc/mocentre.pfx"));
+            iMerchantCertList.add(util.readFile(""));
             para.setMerchantCertFileList(iMerchantCertList);
 
             //设置商户证书密码。如果是多商户则在iMerchantPasswordList放置多条记录。注意：密码顺序要与商户编号顺序一致
@@ -81,7 +81,7 @@ public class MerchantParaFromDB1 extends MerchantParaFactory {
             para.setMerchantCertPasswordList(iMerchantPasswordList);
 
             //#交易日志文件存放目录
-            para.setLogPath("D:/mocentre/abc/log");
+            para.setLogPath("");
             //#证书储存媒体
             para.setMerchantKeyStoreType("0");
 
