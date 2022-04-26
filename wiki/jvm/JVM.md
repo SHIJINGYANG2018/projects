@@ -29,8 +29,11 @@ Java 编译器只需面向 JVM，生成 JVM 能理解的代码或字节码文件
 
 ## Java 代码编译和执行的整个过程
 `Java 代码编译是由 Java 源码编译器来完成`
+
 ![](https://wiki.jikexueyuan.com/project/java-vm/images/javadebug.gif)
+
 `Java 字节码的执行是由 JVM 执行引擎来完成`
+
 ![](https://wiki.jikexueyuan.com/project/java-vm/images/jvmdebug.gif)
 
 ### 代码编译、执行三大步骤机制
@@ -47,4 +50,13 @@ Java 编译器只需面向 JVM，生成 JVM 能理解的代码或字节码文件
 #### 类加载机制
 
 #### 类执行机制
+
+
+#### 栈
+FILO 先进后出 fast in last out
+存储 栈针，操作
+局部变量 
+操作数栈
+动态连接
+方法出口 
 

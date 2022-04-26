@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+    <!-- 目标对象 -->
+    <bean id="a" class="com.sjy.test.aop.A"/>
+    <bean id="c" class="com.sjy.test.aop.C"/>
+    <!-- 切面bean -->
+    <bean id="b" class="com.sjy.test.aop.B"/>
+    <!-- 面向切面编程 -->
+    <aop:config>
+        <aop:aspect ref="b">
+            <aop:pointcut id="cut" expression="execution(* *(..))"/>
+            <aop:before method="beforSay" pointcut-ref="cut"/>
+            <aop:after method="afterSay" pointcut-ref="cut"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

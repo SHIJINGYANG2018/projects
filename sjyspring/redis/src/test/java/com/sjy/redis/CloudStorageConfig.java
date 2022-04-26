@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * 云存储配置信息
  *
- * @author mocentre
+ * @author
  */
 @Data
 public class CloudStorageConfig implements Serializable {

@@ -8,16 +8,18 @@ package thread.ThreadDemo.Asynchronized_demo;
 public class Demo2 {
 
 
-    private synchronized  void test1(){
-    System.out.println("synchronized方法执行---"+Thread.currentThread().getName());
+    private synchronized void test1() {
+        System.out.println("synchronized方法执行---" + Thread.currentThread().getName());
     }
-    private void  test2(){
-        System.out.println("非synchronized方法执行----"+Thread.currentThread().getName());
+
+    private void test2() {
+        System.out.println("非synchronized方法执行----" + Thread.currentThread().getName());
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         Demo2 demo2 = new Demo2();
-        new Thread(demo2::test1,"T1").start();
-        new Thread(demo2::test2,"T2").start();
+        new Thread(demo2::test1, "T1").start();
+        new Thread(demo2::test2, "T2").start();
     }
 
 }
